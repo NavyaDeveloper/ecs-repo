@@ -15,7 +15,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - echo Using region: $AWS_DEFAULT_REGION
+      - echo $AWS_DEFAULT_REGION
       # Use `get-login-password` instead of deprecated `get-login`
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 535002851105.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       - REPOSITORY_URI=535002851105.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/aws-ecs-docker
